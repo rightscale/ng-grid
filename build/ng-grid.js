@@ -2,7 +2,7 @@
 * ng-grid JavaScript Library
 * Authors: https://github.com/angular-ui/ng-grid/blob/master/README.md 
 * License: MIT (http://www.opensource.org/licenses/mit-license.php)
-* Compiled At: 04/15/2014 13:24
+* Compiled At: 10/26/2015 14:12
 ***********************************************/
 (function(window, $) {
 'use strict';
@@ -2269,7 +2269,6 @@ var ngSearchProvider = function ($scope, grid, $filter) {
     var searchEntireRow = function(condition, item, fieldMap){
         var result;
         for (var prop in item) {
-            if (item.hasOwnProperty(prop)) {
                 var c = fieldMap[prop.toLowerCase()];
                 if (!c) {
                     continue;
@@ -2299,7 +2298,6 @@ var ngSearchProvider = function ($scope, grid, $filter) {
                         }
                     }
                 }
-            }
         }
         return false;
     };

@@ -11,7 +11,10 @@
     var searchEntireRow = function(condition, item, fieldMap){
         var result;
         for (var prop in item) {
-            if (item.hasOwnProperty(prop)) {
+            // remove requirement for data to be a property of the object
+            // we need to be able to search through the prototype chain
+            // to support our usage of TypeScript classes for view models
+            //if (item.hasOwnProperty(prop)) {
                 var c = fieldMap[prop.toLowerCase()];
                 if (!c) {
                     continue;
@@ -42,7 +45,7 @@
                         }
                     }
                 }
-            }
+            //}
         }
         return false;
     };
